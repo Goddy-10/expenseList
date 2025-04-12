@@ -1,0 +1,11 @@
+.ExpenseList{
+    text-decoration: underline;
+    text-decoration-color: blue;
+    background-color: blueviolet;
+}
+
+.ExpenseFilter{
+    text-decoration-color: aqua;
+    border-color: aquamarine;
+    background-color: blue;
+}
