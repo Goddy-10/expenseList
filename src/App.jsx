@@ -1,7 +1,7 @@
 import { useState } from "react";
 import ExpenseList from "./components/ExpenseList";
 import ExpenseFilter from "./components/ExpenseFilter";
- 
+ import ExpenseForm from "./components/ExpenseForm";
 function App() {
   const [expenses, setExpenses] = useState([
     { id: 1, Description: "2 packets of Maize flour", Amount:180,Category: "Groceries" },
@@ -11,6 +11,9 @@ function App() {
     { id: 5, Description: "1 Netflix subscription",Amount:1500, Category: "Entertainment" },
   ]);
 
+  const addItem = (data) => {
+  setExpenses(()=>[...expenses,data])
+}
 
   const deleteItem = (id) => {
     setExpenses(expenses.filter(expenses=>expenses.id !==id))
@@ -21,6 +24,7 @@ function App() {
   
   return (
     <>
+      <ExpenseForm addExpense={ addItem} />
       <ExpenseFilter filterItem={ filterItem} />
       
       <ExpenseList items={expenses} deleteItem={ deleteItem} />
